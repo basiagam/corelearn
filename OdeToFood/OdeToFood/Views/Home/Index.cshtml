@@ -12,11 +12,11 @@
 }
 
 <div>
-    <a asp-action="Create">Add restaurant</a>
+    <a class="btn btn-primary" asp-action="Create">Add restaurant</a>
 </div>
 
 <div>
     @section footer{
-        @Model.CurrentMessage
+        @DateTime.Now.Year
 }
 </div>

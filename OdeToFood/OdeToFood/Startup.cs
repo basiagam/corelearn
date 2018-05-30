@@ -63,17 +63,12 @@ namespace OdeToFood
                 .AddRedirectToHttpsPermanent());
 
             app.UseStaticFiles();
+            app.UseNodeModules(env.ContentRootPath);
 
             app.UseAuthentication();
 
             app.UseMvc(ConfugireRoutes);
 
-            app.Run(async (context) =>
-            {
-                var greeting = greeter.GetMessageOfTheDay();
-                context.Response.ContentType = "text/plain";
-                await context.Response.WriteAsync($"Not found");
-            });
         }
 
         private void ConfugireRoutes(IRouteBuilder routeBuilder)

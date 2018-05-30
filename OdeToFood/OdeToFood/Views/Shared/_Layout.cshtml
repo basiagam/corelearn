@@ -1,31 +1,27 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!doctype html>
+<html>
 <head>
     <title>@ViewBag.Title</title>
+    <link href="~/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
-<body>
-    <div>
+<body class="panel">
+    <nav class="navbar navbar-light bg-light">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">OdeToFood</a>
+        </div>
+        <div class="navbar-right">
+            <vc:login-logout></vc:login-logout>
+            Test
+        </div>
+    </nav>
+    <div class="container">
         @RenderBody()
+        <footer>
+            @RenderSection("footer", required: false)
+        </footer>
     </div>
-    <footer>
-        @RenderSection("footer", required:false)
-        <vc:greeter></vc:greeter>
-        @if (User.Identity.IsAuthenticated)
-        {
-            foreach(var identity in User.Identities)
-            {
-                <h3>@identity.Name</h3>
-                <ul>
-                    @foreach(var claim in identity.Claims)
-                    {
-                        <li>@claim.Type - @claim.Value</li>
-
-                    }
-                </ul>
-            }
-        }
-        else {
-            <div>You are anonymous</div>
-        }
-    </footer>
+    <script src="~/node_modules/jquery/dist/jquery.js"></script>
+    <script src="~/node_modules/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"></script>
 </body>
 </html>
