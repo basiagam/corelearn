@@ -1,0 +1,11 @@
+C:\Users\marcin.basiaga\Desktop\corelearn\RESTfulAPICore\RESTfulAPICore\RESTfulAPICore\bin\Debug\netcoreapp2.0\RESTfulAPICore.deps.json
+C:\Users\marcin.basiaga\Desktop\corelearn\RESTfulAPICore\RESTfulAPICore\RESTfulAPICore\bin\Debug\netcoreapp2.0\RESTfulAPICore.runtimeconfig.json
+C:\Users\marcin.basiaga\Desktop\corelearn\RESTfulAPICore\RESTfulAPICore\RESTfulAPICore\bin\Debug\netcoreapp2.0\RESTfulAPICore.runtimeconfig.dev.json
+C:\Users\marcin.basiaga\Desktop\corelearn\RESTfulAPICore\RESTfulAPICore\RESTfulAPICore\bin\Debug\netcoreapp2.0\RESTfulAPICore.dll
+C:\Users\marcin.basiaga\Desktop\corelearn\RESTfulAPICore\RESTfulAPICore\RESTfulAPICore\bin\Debug\netcoreapp2.0\RESTfulAPICore.pdb
+C:\Users\marcin.basiaga\Desktop\corelearn\RESTfulAPICore\RESTfulAPICore\RESTfulAPICore\obj\Debug\netcoreapp2.0\RESTfulAPICore.csprojResolveAssemblyReference.cache
+C:\Users\marcin.basiaga\Desktop\corelearn\RESTfulAPICore\RESTfulAPICore\RESTfulAPICore\obj\Debug\netcoreapp2.0\RESTfulAPICore.csproj.CoreCompileInputs.cache
+C:\Users\marcin.basiaga\Desktop\corelearn\RESTfulAPICore\RESTfulAPICore\RESTfulAPICore\obj\Debug\netcoreapp2.0\RESTfulAPICore.AssemblyInfoInputs.cache
+C:\Users\marcin.basiaga\Desktop\corelearn\RESTfulAPICore\RESTfulAPICore\RESTfulAPICore\obj\Debug\netcoreapp2.0\RESTfulAPICore.AssemblyInfo.cs
+C:\Users\marcin.basiaga\Desktop\corelearn\RESTfulAPICore\RESTfulAPICore\RESTfulAPICore\obj\Debug\netcoreapp2.0\RESTfulAPICore.dll
+C:\Users\marcin.basiaga\Desktop\corelearn\RESTfulAPICore\RESTfulAPICore\RESTfulAPICore\obj\Debug\netcoreapp2.0\RESTfulAPICore.pdb
