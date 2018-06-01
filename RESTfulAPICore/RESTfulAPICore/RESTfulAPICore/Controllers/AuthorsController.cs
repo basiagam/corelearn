@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using RESTfulAPICore.Models;
 using RESTfulAPICore.Controllers.Helpers;
 using AutoMapper;
+using RESTfulAPICore.Entities;
+using Microsoft.AspNetCore.Http;
 
 namespace RESTfulAPICore.Controllers.Controllers
 {
@@ -28,7 +30,7 @@ namespace RESTfulAPICore.Controllers.Controllers
                 return Ok(authors);        
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name="GetAuthor")]
         public IActionResult GetAuthor(Guid id)
         {
             if (!_libraryRepository.AuthorExists(id))
@@ -42,6 +44,37 @@ namespace RESTfulAPICore.Controllers.Controllers
 
         }
 
+        [HttpPost]
+        public IActionResult CreateAuthor([FromBody] AuthorForCreationDto author)
+        {
+            if (author == null)
+            {
+                return BadRequest();
+            }
+
+            var authorEntity = Mapper.Map<Author>(author);
+
+            _libraryRepository.AddAuthor(authorEntity);
+
+            if (!_libraryRepository.Save())
+            {
+                throw new Exception("Creating an author failed on save.");
+            }
+
+            var authorToReturn = Mapper.Map<AuthorDto>(authorEntity);
+
+            return CreatedAtRoute("GetAuthor", new { id = authorToReturn.Id }, authorToReturn);
+        }
+
+        [HttpPost("{id}")]
+        public IActionResult BlockAuthorCreation(Guid id)
+        {
+            if (_libraryRepository.AuthorExists(id))
+            {
+                return new StatusCodeResult(StatusCodes.Status409Conflict);
+            }
+            return NotFound();
+        }
 
     }
 }

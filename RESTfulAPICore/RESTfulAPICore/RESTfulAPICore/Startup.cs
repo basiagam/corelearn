@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,7 +35,12 @@ namespace Rest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc(setupAction=>
+            {
+                //dodajemy możliwość zwracania wyniku XML
+                setupAction.ReturnHttpNotAcceptable = true;
+                setupAction.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+            });
 
             // register the DbContext on the container, getting the connection string from
             // appSettings (note: use this during development; in a production environment,
@@ -61,6 +67,7 @@ namespace Rest
             {
                 app.UseExceptionHandler(appBuilder =>
                 {
+                    //zamiast zwracania wyjątków, API rzuca kod błędu 500
                     appBuilder.Run(async context =>
                     {
                         context.Response.StatusCode = 500;
@@ -83,6 +90,11 @@ namespace Rest
 
                 //mapowanie Book->BookDto
                 cfg.CreateMap<Book, BookDto>();
+
+                //tu mapujemy odwrotnie do API POST ForCreation->Author
+                cfg.CreateMap<AuthorForCreationDto, Author>();
+
+                cfg.CreateMap<BookForCreationDto, Book>();
             });
 
             libraryContext.EnsureSeedDataForContext();
