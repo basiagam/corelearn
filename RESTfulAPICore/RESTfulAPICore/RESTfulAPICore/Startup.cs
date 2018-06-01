@@ -4,11 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using RESTfulAPICore.Controllers.Helpers;
 using RESTfulAPICore.Entities;
+using RESTfulAPICore.Models;
 using RESTfulAPICore.Services;
 
 namespace Rest
@@ -44,9 +47,6 @@ namespace Rest
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-
-            /* SPRAWDZIC CONFIGURE LINIA PO LINII GDZIE SIE WYKRZACZA (NOTEPAD)*/
-
         public void Configure(IApplicationBuilder app, IHostingEnvironment env,
             ILoggerFactory loggerFactory, LibraryContext libraryContext)
         {
@@ -59,10 +59,31 @@ namespace Rest
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler(appBuilder =>
+                {
+                    appBuilder.Run(async context =>
+                    {
+                        context.Response.StatusCode = 500;
+                        await context.Response.WriteAsync("An unexpected fault happen, try again later.");
+                    });
+                });
             }
 
             app.UseStaticFiles();
+
+            //inicjalizacja AutoMapper 
+            AutoMapper.Mapper.Initialize(cfg =>
+            {
+                //do mapowania Author -> AuthorDTO
+                cfg.CreateMap<Author, AuthorDto>()
+                    .ForMember(dest => dest.Name, opt => opt.MapFrom(src =>
+                     $"{src.FirstName} {src.LastName}"))
+                    .ForMember(dest => dest.Age, opt => opt.MapFrom(src =>
+                    src.DateOfBirth.GetCurrentAge()));
+
+                //mapowanie Book->BookDto
+                cfg.CreateMap<Book, BookDto>();
+            });
 
             libraryContext.EnsureSeedDataForContext();
 
@@ -72,6 +93,7 @@ namespace Rest
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+           
         }
     }
 }
