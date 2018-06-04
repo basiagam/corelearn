@@ -98,6 +98,9 @@ namespace Rest
                 cfg.CreateMap<BookForCreationDto, Book>();
 
                 cfg.CreateMap<BookForUpdateDto, Book>();
+
+                //for partially patch
+                cfg.CreateMap<Book, BookForUpdateDto>();
             });
 
             libraryContext.EnsureSeedDataForContext();
