@@ -97,5 +97,38 @@ namespace RESTfulAPICore.Controllers
             }
             return NoContent();
         }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateBookForAnAuthor(Guid authorId, Guid id,
+            [FromBody] BookForUpdateDto book)
+        {
+            if(book == null)
+            {
+                return BadRequest();
+            }
+
+            if (!_libraryRepository.AuthorExists(authorId))
+            {
+                return NotFound();
+            }
+
+            var bookForAuthorFromRepo = _libraryRepository.GetBookForAuthor(authorId, id);
+            if (bookForAuthorFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            // map
+            Mapper.Map(book, bookForAuthorFromRepo);
+            // apply update
+            _libraryRepository.UpdateBookForAuthor(bookForAuthorFromRepo);
+
+            if (!_libraryRepository.Save())
+            {
+                throw new Exception($"Updating book {id} for {authorId} failed on save");
+            }
+
+            return NoContent();
+        }
     }
 }
