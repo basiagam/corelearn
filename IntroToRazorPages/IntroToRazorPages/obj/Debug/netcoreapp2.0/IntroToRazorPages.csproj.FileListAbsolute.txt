@@ -1,0 +1,11 @@
+C:\Users\marcin.basiaga\Desktop\corelearn\IntroToRazorPages\IntroToRazorPages\bin\Debug\netcoreapp2.0\IntroToRazorPages.deps.json
+C:\Users\marcin.basiaga\Desktop\corelearn\IntroToRazorPages\IntroToRazorPages\bin\Debug\netcoreapp2.0\IntroToRazorPages.runtimeconfig.json
+C:\Users\marcin.basiaga\Desktop\corelearn\IntroToRazorPages\IntroToRazorPages\bin\Debug\netcoreapp2.0\IntroToRazorPages.runtimeconfig.dev.json
+C:\Users\marcin.basiaga\Desktop\corelearn\IntroToRazorPages\IntroToRazorPages\bin\Debug\netcoreapp2.0\IntroToRazorPages.dll
+C:\Users\marcin.basiaga\Desktop\corelearn\IntroToRazorPages\IntroToRazorPages\obj\Debug\netcoreapp2.0\IntroToRazorPages.csproj.CoreCompileInputs.cache
+C:\Users\marcin.basiaga\Desktop\corelearn\IntroToRazorPages\IntroToRazorPages\obj\Debug\netcoreapp2.0\IntroToRazorPages.AssemblyInfoInputs.cache
+C:\Users\marcin.basiaga\Desktop\corelearn\IntroToRazorPages\IntroToRazorPages\obj\Debug\netcoreapp2.0\IntroToRazorPages.AssemblyInfo.cs
+C:\Users\marcin.basiaga\Desktop\corelearn\IntroToRazorPages\IntroToRazorPages\bin\Debug\netcoreapp2.0\IntroToRazorPages.pdb
+C:\Users\marcin.basiaga\Desktop\corelearn\IntroToRazorPages\IntroToRazorPages\obj\Debug\netcoreapp2.0\IntroToRazorPages.dll
+C:\Users\marcin.basiaga\Desktop\corelearn\IntroToRazorPages\IntroToRazorPages\obj\Debug\netcoreapp2.0\IntroToRazorPages.pdb
+C:\Users\marcin.basiaga\Desktop\corelearn\IntroToRazorPages\IntroToRazorPages\obj\Debug\netcoreapp2.0\IntroToRazorPages.csprojResolveAssemblyReference.cache

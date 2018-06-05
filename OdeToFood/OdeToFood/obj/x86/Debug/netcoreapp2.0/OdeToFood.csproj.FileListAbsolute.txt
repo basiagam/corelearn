@@ -1,0 +1,11 @@
+C:\Users\marcin.basiaga\Desktop\corelearn\OdeToFood\OdeToFood\bin\x86\Debug\netcoreapp2.0\OdeToFood.deps.json
+C:\Users\marcin.basiaga\Desktop\corelearn\OdeToFood\OdeToFood\bin\x86\Debug\netcoreapp2.0\OdeToFood.runtimeconfig.json
+C:\Users\marcin.basiaga\Desktop\corelearn\OdeToFood\OdeToFood\bin\x86\Debug\netcoreapp2.0\OdeToFood.runtimeconfig.dev.json
+C:\Users\marcin.basiaga\Desktop\corelearn\OdeToFood\OdeToFood\bin\x86\Debug\netcoreapp2.0\OdeToFood.dll
+C:\Users\marcin.basiaga\Desktop\corelearn\OdeToFood\OdeToFood\bin\x86\Debug\netcoreapp2.0\OdeToFood.pdb
+C:\Users\marcin.basiaga\Desktop\corelearn\OdeToFood\OdeToFood\obj\x86\Debug\netcoreapp2.0\OdeToFood.csprojResolveAssemblyReference.cache
+C:\Users\marcin.basiaga\Desktop\corelearn\OdeToFood\OdeToFood\obj\x86\Debug\netcoreapp2.0\OdeToFood.csproj.CoreCompileInputs.cache
+C:\Users\marcin.basiaga\Desktop\corelearn\OdeToFood\OdeToFood\obj\x86\Debug\netcoreapp2.0\OdeToFood.AssemblyInfoInputs.cache
+C:\Users\marcin.basiaga\Desktop\corelearn\OdeToFood\OdeToFood\obj\x86\Debug\netcoreapp2.0\OdeToFood.AssemblyInfo.cs
+C:\Users\marcin.basiaga\Desktop\corelearn\OdeToFood\OdeToFood\obj\x86\Debug\netcoreapp2.0\OdeToFood.dll
+C:\Users\marcin.basiaga\Desktop\corelearn\OdeToFood\OdeToFood\obj\x86\Debug\netcoreapp2.0\OdeToFood.pdb
