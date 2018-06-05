@@ -9,6 +9,7 @@ using RESTfulAPICore.Controllers.Helpers;
 using AutoMapper;
 using RESTfulAPICore.Entities;
 using Microsoft.AspNetCore.Http;
+using RESTfulAPICore.Helpers;
 
 namespace RESTfulAPICore.Controllers.Controllers
 {
@@ -23,9 +24,9 @@ namespace RESTfulAPICore.Controllers.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAuthors()
+        public IActionResult GetAuthors(AuthorsResourceParameters authorsResourceParameters)
         {
-                var authorsFromRepo = _libraryRepository.GetAuthors();
+                var authorsFromRepo = _libraryRepository.GetAuthors(authorsResourceParameters);
                 var authors = Mapper.Map<IEnumerable<AuthorDto>>(authorsFromRepo);
                 return Ok(authors);        
         }
