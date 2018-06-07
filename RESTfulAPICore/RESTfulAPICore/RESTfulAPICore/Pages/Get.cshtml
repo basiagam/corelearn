@@ -1,0 +1,32 @@
+﻿@page
+@model RESTfulAPICore.Pages.GetModel
+@{
+    ViewData["Title"] = "Get";
+}
+
+<h2>Get</h2>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<h2>Get</h2>
+<input id="btnGetAuth" type="button" value="Lista autorów" />
+<div>
+    <div id="ajaxDiv"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnGetAuth').click(function () {
+            $.getJSON("/api/authors/", null, function (data) {
+                var div = $('#ajaxDiv');
+                div.html("<br/>" + "Otrzymano autorów: " + "<br>");
+                $.each(data, function (i,item) {
+                    div.append("ID: " + item.id+ "<br>");
+                    div.append("Wiek: " + item.age + "<br>");
+                    div.append("Gatunek: " + item.genre + "<br>");
+                    div.append("Dane: " + item.name + "<br><br>");
+                });
+            });
+
+        });
+    });
+</script>
