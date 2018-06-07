@@ -9,15 +9,11 @@
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <h2>Get</h2>
 <input id="btnGetAuth" type="button" value="Lista autorów" />
+<input id="btnGet1" type="button" value="Pojedynczy autor GET " />
+<input id="getRandom" type="button" value="GetRandomUser.ME" />
 <div>
     <div id="ajaxDiv"></div>
 </div>
-
-<input id="btnGet1" type="button" value="Pojedynczy autor GET " />
-<div>
-    <div id="Pojedynczy"></div>
-</div>
-
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -35,10 +31,11 @@
 
         });
 
+        //pojedynczy rekord o zadanym ID
         $('#btnGet1').click(function () {
             var id = "f74d6899-9ed2-4137-9876-66b070553f8f";
             $.getJSON("/api/authors/" + id, null, function (data) {
-                var div = $('#Pojedynczy');
+                var div = $('#ajaxDiv');
                 div.html("<br/>" + "Dane autora: " + "<br>");
 
                 div.append("ID: " + data.id + "<br>");
@@ -46,8 +43,20 @@
                 div.append("Gatunek: " + data.genre + "<br>");
                 div.append("Dane: " + data.name + "<br><br>");
             });
-
         });
 
+        $('#getRandom').click(function () {
+            var count = 10;
+            $.getJSON("https://randomuser.me/api/?results="+ count, null, function (data) {
+                var div = $('#ajaxDiv');
+                div.html("<br/>" + "Dane z randomuser.me: " + "<br>");
+                for (var i = 0; i < data.results.length; i++){
+                    div.append("ID: " + data.results[i].id.value + "<br>");
+                    div.append("Nazwisko: " + data.results[i].name.first + " " + data.results[0].name.first + "<br>");
+                    div.append("Email: " + data.results[i].email + "<br>");
+                    div.append("Telefon: " + data.results[i].cell + "<br><br>");  
+                }   
+            });
+        });
     });
 </script>

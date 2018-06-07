@@ -13,7 +13,7 @@ namespace IntroToRazorPages.Pages.Movies
     {
         private readonly IntroToRazorPages.Models.MovieContext _context;
 
-        public DeleteModel(IntroToRazorPages.Models.MovieContext context)
+        public DeleteModel(MovieContext context)
         {
             _context = context;
         }
